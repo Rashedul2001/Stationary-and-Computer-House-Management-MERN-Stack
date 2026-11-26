@@ -1,0 +1,341 @@
+============================================================
+INFO:
+============================================================
+
+My Client is a Stationary and Computer House owner with having goods like pen, papers,ink and  all stationary goods and electric goods like router,
+cctv camera and all IT products and have  Computer online service for applying and printing, also have various computer courses.
+Now my clients wants the income expense,product tracking web application related to his store products and services.
+The whole system would use bangladesh BDT System and bangladesh local time and date system. 
+The system should record and save all actions with all provided data and user identity in the database.
+
+================================================================================
+Full Application Plan
+================================================================================
+
+-------------------
+navbar
+-------------------
+
+There will be a navbar with store logo on the left. Home, Products, services,Courses as nav items.
+On the Right side there will be Bengali and English toggle switch
+because the client wants the whole website to be shown both in bengali and English language, 
+a dark and light theme switcher, an user icon if logged in other wise a LogIn button because my client will have his own Admin Account 
+and some sales assistants. The User icon will Have dropdown Who it is and Owner Panel and LogOut Option.
+
+-------------
+Login Button
+-------------
+Only login modal will be shown not registration functionality.
+will have field for email password
+forgot password link should be there in the bottom
+
+---------------
+Landing Page
+---------------
+
+The landing page will have a hero section with the image provided, 
+Some Info About the services in another section and the next section with information about goods available on this house,
+then there will another section with Contact information it can be the footer as well.
+the footer should also contain a small portion to link to my github default page.
+
+---------------------
+Product Page
+---------------------
+
+In the product navbar page there will be product picture(show name initial if image is not provided or taking time), product name, product Details ,product retail price per unit and wholesale price
+available units in stock, in a card list view,also there will a search bar to search products using name and description.
+there should be also pil tabs to filter different type of products 
+
+-----------------
+services page
+-----------------
+And In the services nav page Page list of services,name, services details and cost with just search option with name and description.
+
+--------------------
+Courses page
+-------------------
+in this page all the courses with their Title, description, Total Fee, duration will be shown in list view.
+All these pages info will be shown to all guest and users,
+
+-------------------------------
+Landing Page medium size + icon 
+-------------------------------
+
+""""""""""""""
+
+it will only be available to authenticated users
+it will show the below options with proper icons.
+options will open respective modals.
+it will be grow upward and fold to + icon via toggling, + icon size will be medium 
+all modal will save record to database and have Enter and cancel buttons at the end.
+
+---------------------
+Enter Product Record
+---------------------
+
+it will show a search option with name for product. a list withing small area to scroll all available products to select 
+which will shown by scrolling or searching if searched match a product it will scroll to that position.and a field to show what was selected.
+then a toggle for whole sale price and unit price. An input for customer name, a details field if provided by customer.
+The seller will input quantity then the total will be calculated automatically with respective selected wholesale price or retail price.
+But left the total Amount input field editable.
+
+-------------------------
+Enter service Record
+-------------------------
+Same as Product Record just difference will be the names as it is service not product and removed wholesale retail option
+
+------------------------
+Enter Expense Record 
+------------------------
+It will show an select Field for Title as some previously Provided Categories( like personal expense
+maintenance, Inventory purchase, staff Salary, shop rent,Electric bill or others), expense Details and amount 
+
+------------------------
+Collect Student Fee
+-----------------------
+like the first one it show search, bar scroll option to select, show info about student. 
+Then due amount to pay and a input to fill what will student pay out of total due amount.
+
+-----------------------
+Print Invoice
+----------------------
+first create a beautiful and informative invoice template with proper size and design and save it in components.
+this modal will show Incomes selection field sorted by most recent incomes record with title and little data on the top
+then show the invoice preview below it 
+use "react to print" library to print the invoice 
+
+"""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+------------------------------------
+Admin Panel
+-----------------------------------
+a side bar and a topbar. topbar containing bengali english toggle dark mode toggle user icon with dropdown with option to go homepage
+
+
+-------------------
+Sidebar Content:
+------------------
+The Sidebar will contain Dashboard, product management, Service Management, Course Management, User Management, Site Settings,
+All the management should able to do All CRUD Actions
+
+-----------------
+Dashboard
+-----------------
+
+will first contain a card to  with greetings with for current User, time for asia dhaka, weather for created Address in the site settings on left side
+on right side there will be four pills Today, This Week, This Month, and a date range picker.default is today.
+The Data will show based the the selected option from the pil
+below it  There will be three card for showing Total Income, Total Expense, Net Balance
+
+then below it there will be a two graphs side by side for income and expense.
+the graph will show BDT in y axis and days or months on x axis.
+if today is selected then previous 7 days of expense and income data will be shown on graph and if this month is 
+selected then 4 weeks data will be shown in those graphs, if date range is selected then the most 6 recent months 
+data will be shown in the graphs or Income and Expense
+
+Then there will be three tabs below it Income Log, Expense Log,
+30 at a time place a pagination fetch from backend with date range selected before 
+These logs will have date time , who entered these logs, item name or title,
+customer name and other details, make a proper table column for showing these data in the list there will be some info gap for types of income so
+make the table and column so that we can show all type of income in the income list and all type of expense in the expense tab
+you can put --- in  empty field if info gap occurs. 
+
+-----------------------
+Product Management 
+----------------------
+current Page Title at top left
+a Add product button on right 
+below it a search bar on left Total product on right. 
+Then comes the product list with all details with previously stated columns with actions edit and delete
+
+Add product modal will have input field to show previously stated infos about product and selectable category
+and product image will ber inputted via image link not direct image
+crud products 
+edit modal will have an extra field to add to the previous previous product quantity
+
+-------------------
+Service Management
+--------------------
+same type of input to be able to show previously stated details
+crud services
+
+----------------
+Course Management
+------------------
+same page layout with creating courses with previously stated details 
+curd courses 
+
+--------------
+Current Student
+---------------
+same as before 
+crud Student  
+Student will have there name, phone number, their email address, there home address, what course he/she is taking, how much fee is due, when he/she was first enrolled in this course. 
+add student would have those inputs and initial payment as well
+
+--------------
+User Management
+---------------
+same as before 
+curd Users 
+user images will be saved in Cloudinary, with drop or select image input field 
+users will only have profile Name, image(from Cloudinary), email, password.
+
+--------------------
+Site Settings
+--------------------
+Here will be many options, cards and  inputs arranged in eye pleasing manner
+
+these functions will be in this page
+changing the hero picture( stored in Cloudinary with drop and select image from local machine) with previewing image 
+changing hero title and subtitles
+changing All pages titles and subtitles 
+changing contact numbers emails 
+changing location 
+
+an input field to crud Product category,
+input field to crud expense category 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+====================================================================
+Security
+====================================================================
+Admin should have all the permission 
+Assistant should have permission to view and add Income and Expense not able to curd anything in the admin panel  nor should open the dropdown from user icon. 
+Admin Panel and its all pages and actions should have frontend role guard and all the endpoint for admin panel should also have role guard
+Assistant would have its feature in the fronted and all backend endpoint should have role guard
+All other are guest who can see home products and services without any requirements.
+
+
+================================================================================
+Stack Plan and UI, UX and  Logic and Convention
+================================================================================
+-------
+Logic
+-------
+
+All sells will deduct product available quantity till zero
+All income expense will be added and processed, calculated and stored in the database and show in the dashboard in all cards and lists
+All course related income should be calculated for every student with their due fee amount 
+---------------
+Convention 
+----------------
+
+*** All the libraries, codes, softwares and packages should be latest, working, maintained and production grade ***
+*** Make sure the codes are human readable at all time and professional grade. ***
+*** Full website should be responsive should work and look good at low as 350px to up to desktop size***
+database name: laksam_db
+
+
+-------
+Stack 
+-------
+*** use MERN stack ***
+use javascript
+use tailwind css
+
+------------
+Preferences
+------------
+***All the inputs, dropdowns,selects, buttons, cards, and all the UI and functionality that can be found in https://ui.shadcn.com/docs/components  
+should be implement using shadcnui.***
+for auth provider and all auth related functionality use better auth 
+for data and state management use TanStack Query 
+use sonner for toast messages(all actions like crud and log in log out will have a toast in the top right)
+use react icons for icons
+react-i18next for bengali 
+i'm using local machine mongodb 
+
+---------
+Seeding
+---------
+initial admin mail: rashedulprogrammer@gmail.com password:Pass@123
+initial assistant mail: rashedul2001cse@gmail.com Password:Pass@123
+these will be saved in env file 
+
+create a seeding function for seeding initial data like product,services, courses, students, sales, income, expense
+and seed it if no data is present and put it in a specific MockDataSeeds folder
+
+--------
+UI
+________
+
+Core Theme Behavior: Minimalist Navy & Ice Blue design system with full Light and Dark mode support (defaulting to light mode, persisting user preference, and applying smooth 150ms color transitions). All colors are managed centrally as semantic design tokens with 0.5rem default rounded corners and translucent opacity variants for pills, badges, and hover highlights.
+Light Mode Palette:
+Surfaces & Text: #F6FAFD page background, #FFFFFF cards/popovers/sidebar, #0A1931 primary text, #3E688C muted text, #E4EFF7 secondary surfaces, #EAF2F9 muted surfaces, #D5E5F2 borders.
+Brand & Interactive States: #1A3D63 primary buttons (with #F6FAFD text, hovering to #0A1931), #B3CFE5 soft accents, input borders, and active sidebar backgrounds (with #0A1931 active text), and #4A7FA7 focus rings and secondary brand accents.
+Dark Mode Palette:
+Surfaces & Text: #0A1931 page background, #112642 cards/popovers, #0D1F3A sidebar, #F6FAFD primary text, #B3CFE5 muted text and sidebar links, #163354 muted containers, #1A3D63 secondary surfaces and borders.
+Brand & Interactive States: #B3CFE5 primary buttons and focus rings (with #0A1931 button text, brightening to #F6FAFD on hover), #1A3D63 accent and active sidebar backgrounds (with #F6FAFD active text), and #4A7FA7 input outlines.
+Status, Data Visualization & Printing:
+Business Statuses (Light / Dark): Success #059669 / #34D399, Warning #D97706 / #FBBF24, Danger & Destructive #DC2626 / #F87171, Info #4A7FA7 / #B3CFE5, Pending #CA8A04 / #FACC15.
+Chart Colors: Light (#1A3D63, #4A7FA7, #0D9488, #D97706, #B3CFE5) and Dark (#B3CFE5, #4A7FA7, #2DD4BF, #FBBF24, #F6FAFD).
+Print Mode: Hides non-essential interface controls and prints black text (#000000) on a transparent background for receipts and documents.
+
+
+---------------------------
+Initial Project Structure
+---------------------------
+You should never make codes unnecessarily complex use unnecessary function calling detours
+You should follow projects structure at all time and place files in their respective folder
+
+```
+Stationary And Computer House Management/
+├── client/                     # Frontend Single Page Application (Vite + React)
+│   ├── public/                 # Static assets, favicon, initial store photos
+│   ├── src/
+│   │   ├── assets/             # Brand logos, visiting card graphics
+│   │   ├── components/         # Reusable UI components (shadcn/ui + custom)
+│   │   │   ├── ui/             # Primitive shadcn/ui components (dialog, button, table, sheet)
+│   │   │   ├── common/         # Navbar, Footer, ThemeToggle, LanguageSwitcher
+│   │   │   ├── modals/         # LoginModal, IncomeModal, ExpenseModal, StudentFeeModal
+│   │   │   ├── admin/          # AdminSidebar, AdminHeader, AdminLayout
+│   │   │   └── pos/            # POS Invoice printable templates
+│   │   ├── context/            # AuthContext, ThemeContext
+│   │   ├── hooks/              # Custom React hooks (useAuth, useCurrency, useAdmin)
+│   │   ├── lib/                # apiClient.js (native fetch wrapper), queryClient.js
+│   │   ├── locales/            # i18n translation dictionaries (en/common.json, bn/common.json)
+│   │   ├── pages/              # Routed views (public and admin)
+│   │   ├── routes/             # AppRoutes.jsx with ProtectedRoute and AdminRoute guards
+│   │   ├── utils/              # Formatting helpers (formatCurrency.js, formatDate.js)
+│   │   ├── index.css           # Global stylesheet containing CSS color variables
+│   │   ├── App.jsx             # Root component hosting <Toaster /> from sonner
+│   │   └── main.jsx
+│   ├──configFiles 
+│   └── package.json
+│
+├── server/                     # Backend REST API (Node.js + Express)
+│   ├── src/
+│   │   ├── config/             # DB connection, Better Auth, Cloudinary setup
+│   │   ├── controllers/        # Route controllers (product, service, pos, user, settings, auth)
+│   │   ├── middlewares/        # verifyAuth, verifyAdmin, errorHandler, validateBody, uploadMiddleware
+│   │   ├── models/             # Mongoose schemas (User, Product, Service, Income, Expense, Student, SiteSettings)
+│   │   ├── routes/             # Express routes (/api/auth, /api/products, /api/services, /api/admin, etc.)
+│   │   ├── services/           # Business logic, Cloudinary upload service, seeder service
+│   │   ├── utils/              # Logger, API response helpers, seeder utility
+│   │   ├── validators/         # validation schemas for request bodies
+│   │   └── server.js           # Server entry point
+│   ├── .env.example
+│   └── package.json
+│
+├── Global_AI_Instruction.md
+├── RequirementsAndApplicationBasedInstructions.txt
+└── TODO.md
+```
+
+==========================================
+Clarify Instruction Removing Ambiguity
+==========================================
+
+
+
+
+
+
+
+
+

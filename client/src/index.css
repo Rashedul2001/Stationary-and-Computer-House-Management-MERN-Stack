@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.5rem;
+
+  /* Light Mode Palette — Minimalist Navy & Ice Blue */
+  --background: #F6FAFD;
+  --foreground: #0A1931;
+  --card: #FFFFFF;
+  --card-foreground: #0A1931;
+  --popover: #FFFFFF;
+  --popover-foreground: #0A1931;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0A1931;
+  --sidebar-active-bg: #B3CFE5;
+  --sidebar-active-fg: #0A1931;
+
+  --primary: #1A3D63;
+  --primary-foreground: #F6FAFD;
+  --primary-hover: #0A1931;
+
+  --secondary: #E4EFF7;
+  --secondary-foreground: #0A1931;
+  --muted: #EAF2F9;
+  --muted-foreground: #3E688C;
+  --accent: #B3CFE5;
+  --accent-foreground: #0A1931;
+
+  --border: #D5E5F2;
+  --input: #B3CFE5;
+  --ring: #4A7FA7;
+  --brand-accent: #4A7FA7;
+
+  /* Status Colors (Light) */
+  --status-success: #059669;
+  --status-warning: #D97706;
+  --status-danger: #DC2626;
+  --status-info: #4A7FA7;
+  --status-pending: #CA8A04;
+  --destructive: #DC2626;
+  --destructive-foreground: #F6FAFD;
+
+  /* Chart Palette (Light) */
+  --chart-1: #1A3D63;
+  --chart-2: #4A7FA7;
+  --chart-3: #0D9488;
+  --chart-4: #D97706;
+  --chart-5: #B3CFE5;
+}
+
+.dark {
+  /* Dark Mode Palette — Minimalist Navy & Ice Blue */
+  --background: #0A1931;
+  --foreground: #F6FAFD;
+  --card: #112642;
+  --card-foreground: #F6FAFD;
+  --popover: #112642;
+  --popover-foreground: #F6FAFD;
+  --sidebar: #0D1F3A;
+  --sidebar-foreground: #B3CFE5;
+  --sidebar-active-bg: #1A3D63;
+  --sidebar-active-fg: #F6FAFD;
+
+  --primary: #B3CFE5;
+  --primary-foreground: #0A1931;
+  --primary-hover: #F6FAFD;
+
+  --secondary: #1A3D63;
+  --secondary-foreground: #F6FAFD;
+  --muted: #163354;
+  --muted-foreground: #B3CFE5;
+  --accent: #1A3D63;
+  --accent-foreground: #F6FAFD;
+
+  --border: #1A3D63;
+  --input: #4A7FA7;
+  --ring: #B3CFE5;
+  --brand-accent: #4A7FA7;
+
+  /* Status Colors (Dark) */
+  --status-success: #34D399;
+  --status-warning: #FBBF24;
+  --status-danger: #F87171;
+  --status-info: #B3CFE5;
+  --status-pending: #FACC15;
+  --destructive: #F87171;
+  --destructive-foreground: #0A1931;
+
+  /* Chart Palette (Dark) */
+  --chart-1: #B3CFE5;
+  --chart-2: #4A7FA7;
+  --chart-3: #2DD4BF;
+  --chart-4: #FBBF24;
+  --chart-5: #F6FAFD;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  html,
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Inter', 'Hind Siliguri', system-ui, -apple-system, sans-serif;
+    min-width: 320px;
+    overflow-x: hidden;
+  }
+}
+
+/* 80mm Thermal POS Print Mode */
+@media print {
+  @page {
+    size: 80mm auto;
+    margin: 2mm;
+  }
+
+  body {
+    background: transparent !important;
+    color: #000000 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .thermal-receipt-root {
+    width: 76mm !important;
+    max-width: 76mm !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .thermal-receipt-root * {
+    color: #000000 !important;
+    border-color: #000000 !important;
+    background: transparent !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "sch-server",
+  "version": "1.0.0",
+  "description": "Backend REST API for Laksam IT Knowledge & Paper House Management System",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "better-auth": "latest",
+    "cloudinary": "latest",
+    "cors": "latest",
+    "dotenv": "^18.0.10",
+    "dotenv-expand": "^1000.0.0",
+    "express": "^4.21.2",
+    "helmet": "latest",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "multer": "latest",
+    "nodemailer": "latest",
+    "zod": "latest"
+  }
+}
